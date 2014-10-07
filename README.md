@@ -3,7 +3,7 @@ AutomaticUpdatesIntoFeatureService
 
 The Python script grabs a point location from an external site that is constantly updating. It then pulls the feature information out, constructs a JSON object and submits an updated point to an ArcGIS.com hosted feature service. A feature service with a matching schema must already exist for this script to work correctly.
 
-See more information on the [associated ArcGIS Blog post](http://blogs.esri.com/esri/arcgis/...).
+See more information on the [associated ArcGIS Blog post](http://blogs.esri.com/esri/arcgis/2014/10/07/using-python-to-push-updates-to-a-hosted-feature-service-from-an-external-source/).
 
 ## Instructions
 
