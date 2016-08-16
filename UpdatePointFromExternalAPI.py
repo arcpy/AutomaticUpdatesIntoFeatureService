@@ -91,23 +91,23 @@ def send_AGOL_Request(URL, query_dict, returnType=False):
     query_string = urllib.urlencode(query_dict)
 
     jsonResponse = urllib.urlopen(URL, urllib.urlencode(query_dict))
-    jsonOuput = json.loads(jsonResponse.read())
+    jsonOutput = json.loads(jsonResponse.read())
     
     if returnType == "JSON":
-        return jsonOuput
+        return jsonOutput
     
     if not returnType:
-        if "updateResults" in jsonOuput:
+        if "updateResults" in jsonOutput:
             try:            
-                for updateItem in jsonOuput['updateResults']:                    
+                for updateItem in jsonOutput['updateResults']:                    
                     if updateItem['success'] is True:
                         print("request submitted successfully")
             except:
-                print("Error: {0}".format(jsonOuput))
+                print("Error: {0}".format(jsonOutput))
                 return False
             
     else:  # Check that the proper number of features exist in a layer
-        if len(jsonOuput['features']) != returnType:
+        if len(jsonOutput['features']) != returnType:
             print("FS layer needs seed values")
             return False
             
